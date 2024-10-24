@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhớ Em</title>
+    <style>
+      .popup {
+        width: 200px;
+        height: 100px;
+        background-color: #cd6d9b;
+        color: white;
+        position: absolute;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function createPopup() {
+        let popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.innerText = "Anh nhớ em!";
+
+        // Randomize position
+        popup.style.left = Math.random() * (window.innerWidth - 200) + "px";
+        popup.style.top = Math.random() * (window.innerHeight - 100) + "px";
+
+        document.body.appendChild(popup);
+      }
+
+      // Create multiple popups
+      for (let i = 0; i < 50; i++) {
+        setTimeout(createPopup, i * 100);
+      }
+    </script>
+  </body>
+</html>
